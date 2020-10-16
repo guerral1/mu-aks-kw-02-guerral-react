@@ -13,7 +13,7 @@ Clone the application and install packages:
 npm install
 ```
 
-Build the application first:
+Build the application:
 
 ```
 npm run build
@@ -26,9 +26,4 @@ Run the application locally:
 npm run start
 ```
 
-The application is set up to run in PCF:
-
-```
-cf push
-```
-
+The application is set up to run in AKS with a Dockerfile

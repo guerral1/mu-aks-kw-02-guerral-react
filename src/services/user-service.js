@@ -1,6 +1,6 @@
 import configuration from '../config.json';
 
-const PROFILE_URL = 'https://<pl4c3h0ld3r>-security-api-profile.apps.cac.preview.pcf.manulife.com';
+const PROFILE_URL = configuration.PROFILE_URL;
 
 
 const login = async (username, password) => {
