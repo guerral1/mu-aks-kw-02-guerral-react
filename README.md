@@ -1,29 +1,28 @@
-# react-basic-authentication-example
+# aks-react-ui
 
 This application was take from the following example:
-
-React - Basic HTTP Authentication Tutorial & Example
 
 To see a demo and further [details](http://jasonwatmore.com/post/2018/09/11/react-basic-http-authentication-tutorial-example)
 
 
-Clone the application and install packages:
+This application is ready to be configured and deployed to any cloud platform.
 
-```
+
+## Local setup
+
+```bash
 npm install
 ```
 
 Build the application:
 
-```
+```bash
 npm run build
 ```
 
-
 Run the application locally:
 
-```
+```bash
 npm run start
 ```
 
-The application is set up to run in AKS with a Dockerfile
