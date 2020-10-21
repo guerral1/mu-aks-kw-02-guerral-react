@@ -1,4 +1,5 @@
 {
-  "LOCALHOST": "http://localhost:8080",
-  "PROFILE_URL": "https://<pl4c3h0ld3r>-aks-api-profile.apps.cac.preview.pcf.manulife.com"
+  "LOCALHOST": "http://localhost:8000",
+  "PROFILE_URL": "http://localhost:8001",
+  "PROFILE_URL2": "https://<pl4c3h0ld3r>-aks-api-profile.apps.cac.preview.pcf.manulife.com"
 }
