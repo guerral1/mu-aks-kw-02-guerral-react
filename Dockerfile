@@ -1,18 +1,23 @@
 # pull official base image
-FROM node:alpine
+FROM node:14.15-alpine
 
 # set working directory
-WORKDIR /app
+WORKDIR /usr/src/app
 
-# copy the json file first
-COPY ./package.json /app
+# copy .npmrc to get npm packages from Manulife Artifactory
+COPY .npmrc ./
 
-# copy other project files
-COPY . .
+# copy package.json and package-lock.json to get dependencies
+COPY package*.json ./
 
 # install npm dependencies
-RUN npm install
+RUN npm ci
 
-# build the folder
+# copy other project files (unless ignored in .dockerignore)
+COPY . .
+
+# add metadata to the image to describe that the container is listening on port 3000
+EXPOSE 3000
+
+# start container with npm run start
 CMD [ "npm", "run", "start" ]
-
