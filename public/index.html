@@ -7,6 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Web site created using create-react-app --template manulife-mux" />
+    <script>
+      try {
+        // If we are in server environment and __API_URL__ is injected by nginx
+        window.__ENV__ = {
+          API_URL: '__API_URL__',
+        };
+      } catch (e) {
+        console.log(e);
+        // We are in local dev environment and we use value provided by create-react-app from .env file
+        window.__ENV__ = {
+          API_URL: 'test',
+        };
+      }
+    </script>
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/

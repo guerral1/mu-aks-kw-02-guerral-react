@@ -1,6 +1,8 @@
 {
-  "name": "aks-react-ui",
-  "version": "0.1.0",
+  "name": "coach-mu-aks-react",
+  "version": "1.0.0",
+  "description": "Front-end UI of MU AKS",
+  "author": "Manulife University - AKS Booster",
   "private": true,
   "dependencies": {
     "@awesomecomponents/mux": "^2.1.38",
@@ -15,8 +17,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "docker:build": "docker build -t alsamya/aks-react-ui .",
-    "docker:run": "docker run -p 3000:3000 alsamya/aks-react-ui"
+    "docker:build:local": "docker build . -t coach-mu-aks-react",
+    "docker:run:local": "docker run -p 3000:3000 coach-mu-aks-react",
+    "docker:build:k8s": "docker build . -t coach-mu-aks-react:1.0 -f Dockerfile.prod",
+    "docker:run:k8s": "docker run -p 80:80 -e API_URL=saywhaaat coach-mu-aks-react:1.0",
+    "docker:build:acr": "docker build . -t muaksacr.azurecr.io/coach-mu-aks-react:latest -f Dockerfile.prod"
   },
   "eslintConfig": {
     "extends": "react-app"
