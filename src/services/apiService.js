@@ -1,4 +1,4 @@
-const PROFILE_URL = 'http://localhost:3001';
+const API_URL = window.__ENV__.API_URL;
 
 const handleFetchResponse = (res) => {
   if (res.status >= 400 && res.status < 600) {
@@ -8,11 +8,11 @@ const handleFetchResponse = (res) => {
 };
 
 const getAllEmployees = () => {
-  return fetch(`${PROFILE_URL}/employees`).then(handleFetchResponse);
+  return fetch(`${API_URL}/employees`).then(handleFetchResponse);
 };
 
 const getDetailsById = async (id) => {
-  return fetch(`${PROFILE_URL}/details/${id}`).then(handleFetchResponse);
+  return fetch(`${API_URL}/details/${id}`).then(handleFetchResponse);
 };
 
 export { getAllEmployees, getDetailsById };

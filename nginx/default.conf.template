@@ -73,7 +73,7 @@ server {
     # Also, "sub_filter" only works on "text/html" type by default, so it will
     # not try to replace that string in files that are not "*.html". See below:
     # https://create-react-app.dev/docs/title-and-meta-tags#injecting-data-from-the-server-into-the-page
-    sub_filter "__API_URL__" "${API_URL}";
+    sub_filter "__API_URL__" "'${API_URL}'";
     # Preserve the “Last-Modified” header field from the original response 
     # during placeholder string replacement to facilitate response caching. 
     sub_filter_last_modified on;
