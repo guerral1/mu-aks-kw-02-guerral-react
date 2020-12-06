@@ -1,64 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { logout } from '../services/user-service';
-import InfoPanel from './InfoPanel';
+import { H1, H4 } from '@awesomecomponents/mux/core/typography';
+import { Button } from '@awesomecomponents/mux/core/components';
 
-class HomePage extends React.Component {
-  constructor(props) {
-    super(props);
+import { useHistory } from 'react-router-dom';
 
-    this.state = {
-      user: {}
-    };
+function HomePage() {
+  const history = useHistory();
 
-    this.handleLogout = this.handleLogout.bind(this);
-  }
-
-  componentDidMount() {
-    this.setState({
-      user: JSON.parse(localStorage.getItem('user'))
-    });
-  }
-
-  handleLogout() {
-    logout();
-  }
-
-  render() {
-    const { user } = this.state;
-
-    if (user.data) {
-      return (
-        <div>
-          <h2>Hello {user.data.first_name}!</h2>
-          <h2>Welcome to Security Engineering!!</h2>
-          <br />
-          <p>While you're here, feel free to take a look around and make sure you click every where!</p>
-          <br />
-          <br />
-          <br />
-          <InfoPanel data={user.data} />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <p>
-            <Link to="/logout">
-              <span onClick={this.handleLogout}>Logout</span>
-            </Link>
-          </p>
-        </div>
-
-
-      );
-    } else {
-      return (<div>
-        <p>Nothing to see here.</p>
-      </div>);
-    }
-
-  }
+  return (
+    <div>
+      <H1>Welcome to MU AKS Portal!</H1>
+      <H4>When your API is ready, click the following button to load employee details.</H4>
+      <Button onClick={() => history.push('/employees')}>Load Employees</Button>
+    </div>
+  );
 }
 
 export default HomePage;
