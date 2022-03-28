@@ -1,6 +1,5 @@
 import React from 'react';
-import { H1, H4 } from '@awesomecomponents/mux/core/typography';
-import { Button } from '@awesomecomponents/mux/core/components';
+import { H1, H4, Button } from '@manulife/mux';
 
 import { useHistory } from 'react-router-dom';
 

@@ -1,23 +1,17 @@
 import React from 'react';
-import { UtilityHeader, SideNav, Footer } from '@awesomecomponents/mux/core/components';
-import './Layout.css';
+import { UtilityHeader, SideNav, Footer } from '@manulife/mux';
+import { LayoutContainer, LayoutContent } from './styledComponents';
 
 function Layout({ children }) {
   return (
-    <div className="Layout">
-      <div className="Layout-header">
-        <UtilityHeader />
-      </div>
-      <div className="Layout-sideNav">
-        <SideNav mobileHeaderToggle />
-      </div>
-      <div className="Layout-container">
-        <div className="Layout-content">{children}</div>
-        <div className="Layout-footer">
-          <Footer />
-        </div>
-      </div>
-    </div>
+    <>
+      <UtilityHeader />
+      <SideNav mobileHeaderToggle />
+      <LayoutContainer>
+        <LayoutContent>{children}</LayoutContent>
+        <Footer />
+      </LayoutContainer>
+    </>
   );
 }
 
