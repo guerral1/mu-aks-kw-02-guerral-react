@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { Progress, ExpandablePanel, Icon } from '@awesomecomponents/mux/core/components';
+import { Progress, ExpandablePanel, Icon } from '@manulife/mux';
 
 import { getDetailsById } from '../services/apiService';
 import EmployeeItemDetails from './EmployeeItemDetails';

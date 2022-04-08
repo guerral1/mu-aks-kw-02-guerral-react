@@ -1,6 +1,5 @@
 import React from 'react';
-import { H1 } from '@awesomecomponents/mux/core/typography';
-import { Progress, Icon } from '@awesomecomponents/mux/core/components';
+import { Progress, Icon, H1 } from '@manulife/mux';
 
 import { getAllEmployees } from '../services/apiService';
 import EmployeeItem from './EmployeeItem';
