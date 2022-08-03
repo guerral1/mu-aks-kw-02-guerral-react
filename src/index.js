@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '@awesomecomponents/mux/core/typography/assets/fonts/fonts.css';
+import '@manulife/mux/core/typography/assets/fonts/fonts.css';
 import './index.css';
 import App from './App';
 

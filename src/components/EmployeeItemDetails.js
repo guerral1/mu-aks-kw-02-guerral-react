@@ -1,5 +1,5 @@
 import React from 'react';
-import { P } from '@awesomecomponents/mux/core/typography';
+import { P } from '@manulife/mux';
 
 function EmployeeItemDetails({ dob, title }) {
   return (
