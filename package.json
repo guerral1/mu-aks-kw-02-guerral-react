@@ -1,5 +1,5 @@
 {
-  "name": "leethom-mu-aks-react",
+  "name": "<lanid>-mu-aks-react",
   "version": "1.0.0",
   "description": "Front-end UI of MU AKS",
   "author": "Manulife University - AKS Booster",
@@ -16,13 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "docker:local:build": "docker build -t leethom-mu-aks-react:local -f Dockerfile.local .",
-    "docker:local:run": "docker run -p 3000:3000 leethom-mu-aks-react:local",
-    "docker:local:buildprod": "docker build -t leethom-mu-aks-react:1.0 -f Dockerfile .",
-    "docker:local:runprod": "docker run -p 80:80 -e API_URL=http://localhost:3001/api leethom-mu-aks-react:1.0",
-    "docker:acr:tag": "docker tag leethom-mu-aks-react:1.0 acrmuaksleethomdev.azurecr.io/leethom-mu-aks-react:1.0",
-    "docker:acr:push": "az login && az account set --subscription MFC-Global-Canada-CET-MU-Sandbox-S2 && az acr login --name acrmuaksleethomdev && docker push acrmuaksleethomdev.azurecr.io/leethom-mu-aks-react:1.0"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
