@@ -14,7 +14,7 @@
 # Configuration context of a virtual server.
 server {
   # Listening port.
-  listen 80;
+  listen 8080;
   # Root directory to search and serve public web files. All web files such
   # as "index.html" and assets must be inside that folder.
   root /usr/share/nginx/html;
