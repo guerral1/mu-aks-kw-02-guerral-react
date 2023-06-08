@@ -1,18 +1,15 @@
-import React from 'react';
-import { UtilityHeader, SideNav, Footer } from '@manulife/mux';
-import { LayoutContainer, LayoutContent } from './styledComponents';
+import { LayoutContainer, LayoutContent } from "./styledComponents";
+import { Header, SideNav, Footer } from "./components";
 
-function Layout({ children }) {
-  return (
-    <>
-      <UtilityHeader />
-      <SideNav mobileHeaderToggle />
-      <LayoutContainer>
-        <LayoutContent>{children}</LayoutContent>
-        <Footer />
-      </LayoutContainer>
-    </>
-  );
-}
+const Layout = ({ children }) => (
+  <div>
+    <Header />
+    <SideNav />
+    <LayoutContainer>
+      <LayoutContent>{children}</LayoutContent>
+      <Footer />
+    </LayoutContainer>
+  </div>
+);
 
 export default Layout;

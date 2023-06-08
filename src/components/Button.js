@@ -1,0 +1,32 @@
+import styled from "styled-components";
+import typography from "../typography/typography";
+
+export const Button = styled.button`
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 200px;
+  font-family: ${typography.fontFamily};
+  font-size: 1.1875rem;
+  font-weight: 600;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #ec6453;
+  color: #ffffff;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ec6453;
+  padding: 15px 30px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+`;

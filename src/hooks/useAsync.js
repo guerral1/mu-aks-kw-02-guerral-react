@@ -1,6 +1,7 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useRef, useEffect, useState, useCallback } from "react";
 
 const useAsync = (asyncFunction, immediate = true) => {
+  const isCancel = useRef(false);
   const [pending, setPending] = useState(immediate);
   const [value, setValue] = useState(null);
   const [error, setError] = useState(null);
@@ -14,7 +15,11 @@ const useAsync = (asyncFunction, immediate = true) => {
     setValue(null);
     setError(null);
     return asyncFunction()
-      .then((val) => setValue(val))
+      .then((val) => {
+        if (!isCancel.current) {
+          setValue(val);
+        }
+      })
       .catch((err) => setError(err))
       .finally(() => setPending(false));
   }, [asyncFunction]);
@@ -28,6 +33,10 @@ const useAsync = (asyncFunction, immediate = true) => {
     if (immediate) {
       execute();
     }
+
+    return () => {
+      isCancel.current = true;
+    };
   }, [execute, immediate]);
 
   return { execute, pending, value, error };

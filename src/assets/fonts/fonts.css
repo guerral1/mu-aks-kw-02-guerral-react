@@ -1,0 +1,90 @@
+/*
+ * Manulife JH Optimized
+ *
+ * NOTE: Font file import order is important! (because browser issues)
+ */
+@font-face {
+  font-family: 'Manulife JH Sans';
+  src: url('ManulifeJHSans-Optimized-Light.woff2') format('woff2'),
+    url('ManulifeJHSans-Optimized-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manulife JH Sans';
+  src: url('ManulifeJHSans-Optimized-LightItalic.woff2') format('woff2'),
+    url('ManulifeJHSans-Optimized-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Manulife JH Sans';
+  src: url('ManulifeJHSans-Optimized.woff2') format('woff2'),
+    url('ManulifeJHSans-Optimized.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manulife JH Sans';
+  src: url('ManulifeJHSans-Optimized-Italic.woff2') format('woff2'),
+    url('ManulifeJHSans-Optimized-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Manulife JH Sans';
+  src: url('ManulifeJHSans-Optimized-Demibold.woff2') format('woff2'),
+    url('ManulifeJHSans-Optimized-Demibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manulife JH Sans';
+  src: url('ManulifeJHSans-Optimized-Demibold.woff2') format('woff2'),
+    url('ManulifeJHSans-Optimized-Demibold.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Manulife JH Sans';
+  src: url('ManulifeJHSans-Optimized-Bold.woff2') format('woff2'),
+    url('ManulifeJHSans-Optimized-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manulife JH Sans';
+  src: url('ManulifeJHSans-Optimized-BoldItalic.woff2') format('woff2'),
+    url('ManulifeJHSans-Optimized-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Manulife JH Serif';
+  src: url('ManulifeJHSerif-Optimized-Italic.woff2') format('woff2'),
+    url('ManulifeJHSerif-Optimized-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manulife JH Serif';
+  src: url('ManulifeJHSerif-Optimized-Italic.woff2') format('woff2'),
+    url('ManulifeJHSerif-Optimized-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+strong,
+b {
+  font-family: 'Manulife JH Sans', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 700;
+}

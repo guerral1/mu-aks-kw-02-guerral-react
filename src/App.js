@@ -1,9 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
-import Layout from './Layout';
-import HomePage from './components/HomePage';
-import EmployeesPage from './components/EmployeesPage';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import EmployeesPage from "./components/EmployeesPage";
+import Layout from "./Layout";
+import "./App.css";
 
 function App() {
   return (

@@ -1,13 +1,13 @@
-import React, { useCallback } from 'react';
-import { Progress, ExpandablePanel, Icon } from '@manulife/mux';
-
-import { getDetailsById } from '../services/apiService';
-import EmployeeItemDetails from './EmployeeItemDetails';
-import useAsync from '../hooks/useAsync';
+import React, { useCallback } from "react";
+import { getDetailsById } from "../services/apiService";
+import useAsync from "../hooks/useAsync";
+import { P } from "../typography/styledComponents";
+import ExpandablePanel from "./ExpandablePanel/ExpandablePanel";
 
 function EmployeeItem({ employee }) {
-  const asyncFunction = useCallback(() => getDetailsById(employee.id), [employee.id]);
-  const { execute, pending, value, error } = useAsync(asyncFunction, false);
+  const { id, name } = employee;
+  const asyncFunction = useCallback(() => getDetailsById(id), [id]);
+  const { value, pending, error, execute } = useAsync(asyncFunction, true);
 
   const handleToggle = (isCollapsed) => {
     if (!isCollapsed) {
@@ -15,22 +15,24 @@ function EmployeeItem({ employee }) {
     }
   };
 
-  const renderExpandableContent = () => {
+  const renderDetails = () => {
     if (pending) {
-      return <Progress isFloating={false} />;
+      return <P>Loading Details...</P>;
+    } else if (error) {
+      return <P>Oops! Error Loading employee details.</P>;
+    } else {
+      return (
+        <>
+          <P>DOB: {value.dob}</P>
+          <P>Title: {value.title}</P>
+        </>
+      );
     }
-    if (error) {
-      return <Icon manulifeName="sad" color="#1E212F" fill="#8E90A2" secondaryColor="#FF7769" />;
-    }
-    if (value) {
-      return <EmployeeItemDetails dob={value.dob} title={value.title} />;
-    }
-    return <></>;
   };
 
   return (
-    <ExpandablePanel title={employee.name} onToggle={handleToggle}>
-      {renderExpandableContent()}
+    <ExpandablePanel title={name} onToggle={handleToggle}>
+      {renderDetails()}
     </ExpandablePanel>
   );
 }

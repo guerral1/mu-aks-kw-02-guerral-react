@@ -1,9 +1,8 @@
-import React from 'react';
-import { Progress, Icon, H1 } from '@manulife/mux';
-
-import { getAllEmployees } from '../services/apiService';
-import EmployeeItem from './EmployeeItem';
-import useAsync from '../hooks/useAsync';
+import React from "react";
+import { getAllEmployees } from "../services/apiService";
+import EmployeeItem from "./EmployeeItem";
+import useAsync from "../hooks/useAsync";
+import { H3, H1} from "../typography/styledComponents";
 
 function EmployeesPage() {
   const asyncFunction = getAllEmployees;
@@ -11,15 +10,16 @@ function EmployeesPage() {
 
   const renderEmployees = () => {
     if (pending) {
-      return <Progress />;
+      return <H3>Loading...</H3>;
+    } else if (error) {
+      return <H3>Oops! There's something error in the server ☹️</H3>;
+    } else if (value) {
+      return value.map((employee) => (
+        <EmployeeItem key={employee.id} employee={employee} />
+      ));
+    } else {
+      return null;
     }
-    if (error) {
-      console.log(error);
-      return (
-        <Icon manulifeName="sad" color="#1E212F" fill="#8E90A2" secondaryColor="#FF7769" height="10em" width="10em" />
-      );
-    }
-    return value.map((employee) => <EmployeeItem key={employee.id} employee={employee} />);
   };
 
   return (
