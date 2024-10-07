@@ -1,5 +1,5 @@
 {
-  "name": "<lanid>-mu-aks-react",
+  "name": "banksch-mu-aks-react",
   "version": "1.0.0",
   "description": "Front-end UI of MU AKS",
   "author": "Manulife University - AKS Booster",
@@ -19,7 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docker:local:build": "docker build -t banksch-mu-aks-ui:local -f Dockerfile.local .",
+    "docker:local:run": "docker run -p 3000:3000 banksch-mu-aks-ui:local"
   },
   "eslintConfig": {
     "extends": "react-app"
