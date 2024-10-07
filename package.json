@@ -1,5 +1,5 @@
 {
-  "name": "banksch-mu-aks-react",
+  "name": "banksch-mu-aks-ui",
   "version": "1.0.0",
   "description": "Front-end UI of MU AKS",
   "author": "Manulife University - AKS Booster",
@@ -20,8 +20,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "docker:local:build": "docker build -t banksch-mu-aks-ui:local -f Dockerfile.local .",
-    "docker:local:run": "docker run -p 3000:3000 banksch-mu-aks-ui:local"
+    "docker:local:build": "docker build -t banksch-mu-aks-ui:local -f Dockerfile.local . --platform linux/amd64",
+    "docker:local:run": "docker run -p 3000:3000 --platform linux/amd64 banksch-mu-aks-ui:local",
+    "docker:local:buildprod": "docker build -t banksch-mu-aks-ui:1.0 -f Dockerfile . --platform linux/amd64",
+    "docker:local:runprod": "docker run -dp 80:8080 -e API_URL=http://localhost:3001/api --platform linux/amd64 banksch-mu-aks-ui:1.0"
   },
   "eslintConfig": {
     "extends": "react-app"
