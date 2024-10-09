@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: banksch-mu-aks-ui
+  namespace: banksch
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: 'true'
+spec:
+  type: LoadBalancer
+  selector:
+    app: banksch-mu-aks-ui
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
