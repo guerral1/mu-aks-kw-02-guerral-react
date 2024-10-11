@@ -1,7 +1,0 @@
-# Resources
-replicas: 1
-cpuLimit: '100m'
-memoryLimit: '64Mi'
-
-# API
-apiUrl: 'http://10.56.46.34:3001/api'
