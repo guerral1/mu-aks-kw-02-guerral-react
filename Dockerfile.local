@@ -1,0 +1,12 @@
+FROM endorsed-docker.artifactory.platform.manulife.io/ets-node:22-debian12-latest
+ENV NODE_ENV=production
+WORKDIR /home/mfc
+COPY --chown=mfc:mfc .npmrc ./
+COPY --chown=mfc:mfc package*.json ./
+RUN npm ci --omit=dev
+RUN rm .npmrc
+COPY --chown=mfc:mfc src ./src
+COPY --chown=mfc:mfc public ./public
+COPY --chown=mfc:mfc .env ./
+EXPOSE 3000
+CMD [ "npm", "run", "start" ]
