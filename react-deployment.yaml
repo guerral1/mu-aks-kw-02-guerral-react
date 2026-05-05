@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guerral-mu-aks-react
+  namespace: guerral
+  labels:
+    app: guerral-mu-aks-react
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: guerral-mu-aks-react
+  template:
+    metadata:
+      labels:
+        app: guerral-mu-aks-react
+    spec:
+      nodeSelector:
+        'kubernetes.io/os': linux
+      containers:
+        - name: guerral-mu-aks-react
+          image: acrmuaksguerraldev.azurecr.io/guerral-mu-aks-react:1.0
+          resources:
+            limits:
+              memory: '64Mi'
+              cpu: '100m'
+          ports:
+            - containerPort: 8080
+          env:
+            - name: API_URL
+              value: 'http://10.56.46.32:3001/api'
